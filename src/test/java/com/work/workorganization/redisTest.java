@@ -17,6 +17,33 @@ public class redisTest {
     private RedisTemplate redisTemplate;
 
     /**
+     * 查看数据
+     */
+    @Test
+    public void getRedisValues(){
+        //获取操作String类型的接口对象
+        //hash
+        HashOperations hashOperations = redisTemplate.opsForHash();
+        String age = (String) hashOperations.get("person", "age");
+        System.out.println("age = " + age);
+        String name = (String) hashOperations.get("person", "name");
+        System.out.println("name = " + name);
+        String address = (String) hashOperations.get("person", "address");
+        System.out.println("address = " + address);
+        //String
+        ValueOperations valueOperations = redisTemplate.opsForValue();
+        String city123 = valueOperations.get("city123").toString();
+        System.out.println("city123 = " + city123);
+        String city1234 = valueOperations.get("city1234").toString();
+        System.out.println("city1234 = " + city1234);
+        //Set
+        SetOperations setOperations = redisTemplate.opsForSet();
+        Set myset = setOperations.members("myset");
+        System.out.println("myset = " + myset);
+    }
+
+
+    /**
      * 操作String类型的数据
      */
     @Test

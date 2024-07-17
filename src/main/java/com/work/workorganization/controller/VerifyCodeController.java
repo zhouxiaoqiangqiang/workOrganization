@@ -6,6 +6,7 @@ import cn.hutool.captcha.LineCaptcha;
 import cn.hutool.captcha.ShearCaptcha;
 import cn.hutool.core.io.IoUtil;
 import cn.hutool.core.util.RandomUtil;
+import com.work.workorganization.config.aop.RateLimit;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,6 +33,7 @@ public class VerifyCodeController {
 
     //获取扭曲干扰的验证码
     @GetMapping("/createShearCaptcha")
+    @RateLimit(limit = 5, timeout = 60)
     public void getShearCaptcha(HttpServletResponse response)
     {
 
