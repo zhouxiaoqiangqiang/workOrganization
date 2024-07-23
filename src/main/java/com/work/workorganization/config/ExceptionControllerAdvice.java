@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import java.lang.reflect.Field;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -57,7 +58,7 @@ public class ExceptionControllerAdvice {
 
     // 获取字段在类中的索引位置
     private int getFieldIndex(String fieldName) {
-        java.lang.reflect.Field[] fields = TestRequest.class.getDeclaredFields();
+        Field[] fields = TestRequest.class.getDeclaredFields();
         for (int i = 0; i < fields.length; i++) {
             if (fields[i].getName().equals(fieldName)) {
                 return i;
