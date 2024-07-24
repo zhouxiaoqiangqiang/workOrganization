@@ -97,6 +97,13 @@
             <artifactId>commons-pool2</artifactId>
         </dependency>
 
+        <!--        redisson依赖-->
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+            <version>3.23.4</version>
+        </dependency>
+
         <!--	参数校验 springboot的validation-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

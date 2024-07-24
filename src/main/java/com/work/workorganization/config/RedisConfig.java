@@ -9,7 +9,11 @@ import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSeriali
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import javax.annotation.Resource;
-
+/**
+  * -@Desc: Redis配置类
+  * -@Author: zhouzhiqiang
+  * -@Date: 2024/7/24 16:57
+ **/
 @Configuration
 public class RedisConfig extends CachingConfigurerSupport {
 

@@ -18,6 +18,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/valid")
 public class ValidTestController {
 
+    /**
+     * 测试普通校验
+     */
     @PostMapping("/test")
     public ResponseBo test(@Validated @RequestBody TestRequest request){
         System.out.println(request);
