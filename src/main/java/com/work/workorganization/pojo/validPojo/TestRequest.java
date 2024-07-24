@@ -1,4 +1,4 @@
-package com.work.workorganization.pojo;
+package com.work.workorganization.pojo.validPojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -6,7 +6,11 @@ import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
-
+/**
+  * -@Desc:   注解校验
+  * -@Author: zhouzhiqiang
+  * -@Date: 2024/7/24 9:53
+ **/
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
