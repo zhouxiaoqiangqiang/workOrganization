@@ -119,6 +119,13 @@
 
         <!--        文件转换-->
         <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.11</version>
+        </dependency>
+
+        <!--        文件转换-->
+        <dependency>
             <groupId>com.documents4j</groupId>
             <artifactId>documents4j-transformer-msoffice-word</artifactId>
             <version>1.0.3</version>
