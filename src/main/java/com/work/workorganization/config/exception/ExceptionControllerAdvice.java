@@ -1,4 +1,4 @@
-package com.work.workorganization.config;
+package com.work.workorganization.config.exception;
 
 import com.work.workorganization.pojo.ResponseBo;
 import lombok.extern.slf4j.Slf4j;
@@ -29,6 +29,11 @@ import java.util.stream.Collectors;
 public class ExceptionControllerAdvice {
     @ExceptionHandler(RuntimeException.class)
     public ResponseBo handlerNullException(RuntimeException e) {
+        return ResponseBo.error(e.getMessage());
+    }
+
+    @ExceptionHandler(StatusCheckException.class)
+    public ResponseBo handlerStatusCheckException(StatusCheckException e) {
         return ResponseBo.error(e.getMessage());
     }
 
