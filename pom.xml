@@ -124,6 +124,12 @@
             <version>3.11</version>
         </dependency>
 
+        <!--        ftp-->
+        <dependency>
+            <groupId>commons-net</groupId>
+            <artifactId>commons-net</artifactId>
+            <version>3.9.0</version>
+        </dependency>
         <!--        文件转换-->
         <dependency>
             <groupId>com.documents4j</groupId>

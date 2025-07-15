@@ -27,3 +27,11 @@ cron:
   testTask1: '0/10 * * * * ?'
   testTask2: '0/30 * * * * ?'
   testTask3: '0 0/1 * * * ?'
+
+# Ftp
+ftp:
+  server: 192.168.163.1
+  port: 21
+  username: testFtp
+  password: testFtp
+  path: /home/testFtp/
