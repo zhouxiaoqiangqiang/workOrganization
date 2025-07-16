@@ -124,6 +124,13 @@
             <version>3.11</version>
         </dependency>
 
+        <!--        easyExcel -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>easyexcel</artifactId>
+            <version>3.3.2</version>
+        </dependency>
+
         <!--        ftp-->
         <dependency>
             <groupId>commons-net</groupId>
