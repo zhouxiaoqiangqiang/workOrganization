@@ -41,12 +41,18 @@ public class RedissonLockController {
             if (tryLockResult) {
                 //业务逻辑
                 System.out.println("执行业务逻辑xxxx");
+                //模拟处理业务逻辑 休眠10秒
+                Thread.sleep(10000);
+            } else {
+                return ResponseBo.error("获取分布式锁失败!业务执行失败!已有其他线程在处理该订单!");
             }
         } catch (Exception e) {
             e.printStackTrace();
             return ResponseBo.error("获取分布式锁失败!业务执行成功!");
         } finally {
-            fairLock.unlock();
+            if (fairLock.isHeldByCurrentThread()) {
+                fairLock.unlock();
+            }
         }
         return ResponseBo.ok("获取分布式锁成功!业务执行成功!");
     }
