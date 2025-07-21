@@ -35,3 +35,7 @@ ftp:
   username: testFtp
   password: testFtp
   path: /home/testFtp/
+
+# bigModel大模型
+bigmodel:
+  api-key: 481ff376ad3141af87e5bc640b54a533.Nakfh1hMmOoPsfMp

@@ -122,11 +122,17 @@
             <version>1.0.3</version>
         </dependency>
 
-        <!--        文件转换-->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>3.11</version>
+        </dependency>
+
+        <!--        bigModel OpenAi -->
+        <dependency>
+            <groupId>cn.bigmodel.openapi</groupId>
+            <artifactId>oapi-java-sdk</artifactId>
+            <version>release-V4-2.4.1</version>
         </dependency>
 
         <!--        easyExcel -->
