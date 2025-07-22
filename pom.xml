@@ -128,6 +128,20 @@
             <version>3.11</version>
         </dependency>
 
+        <!--    二维码依赖 -->
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>core</artifactId>
+            <version>3.4.1</version>
+        </dependency>
+
+        <!--    二维码依赖 -->
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>javase</artifactId>
+            <version>3.4.1</version>
+        </dependency>
+
         <!--        bigModel OpenAi -->
         <dependency>
             <groupId>cn.bigmodel.openapi</groupId>
