@@ -3,7 +3,7 @@ package com.work.workorganization.utils;
 import cn.hutool.core.collection.CollectionUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.stereotype.Component;
+
 
 import javax.activation.DataHandler;
 import javax.activation.FileDataSource;
@@ -101,11 +101,20 @@ public class EmailUtils {
 
         //设置收件人
         for (String sendMailAddress : mailAddressList) {
-            message.addRecipient(MimeMessage.RecipientType.TO, new InternetAddress(sendMailAddress));
+
+            try {
+                message.addRecipient(MimeMessage.RecipientType.TO, new InternetAddress(sendMailAddress));
+            } catch (AddressException e) {
+                log.error("Illegal email address: {}", sendMailAddress);
+            }
         }
         //设置抄送人
         for (String ccMailAddress : ccList) {
-            message.addRecipient(MimeMessage.RecipientType.CC, new InternetAddress(ccMailAddress));
+            try {
+                message.addRecipient(MimeMessage.RecipientType.CC, new InternetAddress(ccMailAddress));
+            } catch (AddressException e) {
+                log.error("Illegal email address: {}", ccMailAddress);
+            }
         }
 
         //邮件主题
@@ -159,7 +168,7 @@ public class EmailUtils {
      * @param onBehalfUserName        邮件代发人姓名
      * @param onBehalfUserMailAddress 邮件代发人邮箱地址
      */
-    public static void asyncSendMail(List<String> mailAddressList, Date date, String subject, String content, List<File> fileList, List<String> ccList, String onBehalfUserName, String onBehalfUserMailAddress) throws Exception {
+    public static void asyncSendMail(List<String> mailAddressList, Date date, String subject, String content, List<File> fileList, List<String> ccList, String onBehalfUserName, String onBehalfUserMailAddress) {
         if (CollectionUtil.isEmpty(mailAddressList)) {
             return;
         }

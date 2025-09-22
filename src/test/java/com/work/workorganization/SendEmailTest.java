@@ -26,7 +26,7 @@ public class SendEmailTest {
         //发送邮件
         try {
             EmailUtils.asyncSendMail(
-                    Collections.singletonList("1525761613@qq.com"),
+                    Arrays.asList("1525761613@qq.com","123@163.com","123@cmbchina.com","52142_2@bank_of_china.com","swq2@cgbchina.com.cn","291@guosen.com.cn"),
                     new Date(),
                     today+"测试邮件标题",//邮件主题标题
                     htmlTableContent,//邮件正文内容(支持html格式)
